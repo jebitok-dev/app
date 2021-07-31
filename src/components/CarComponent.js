@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect, ReactReduxContext} from 'react-redux';
 import {getItems} from '../actions/index';
+import {FaRegSun, FaAngleRight} from 'react-icons/fa';
 
 const CarComponent = props => {
     const [rerender] = useState(false);
@@ -53,12 +54,73 @@ const CarComponent = props => {
                             <p className="carname">
                                 {newCar[0].name}
                             </p>
+                        <p className="upon">$3000 deposit upon purchase</p>
+                        <p className="reviewsContainer">
+                            Reviews:&nbsp;
+                            {newCar[0].reviews}
+                        </p>
+                        <p className="modelContainer">
+                            Model:&nbsp;
+                            {newCar[0].model}
+                        </p>
+                        <div>
+                            <p className="total">
+                                Total amount payable&nbsp;
+                                {newCar[0].price}
+                            </p>
                         </div>
+                        <div>
+                            <Link
+                                to={{
+                                    pathname: '/book/' + `${id}`,
+                                    state: {fromDashboard: true},
+                                }}
+                                className="buttonbook"
+                            >
+                                Book
+                            </Link>
+                        </div>
+                        <button 
+                            type="button"
+                            onClick={handleChange}
+                            className="configure"
+                        >
+                            <FaRegSun className="regsum" />
+                            <div className="config">Configure</div>
+                            <FaAngleRight className="rightfa" />
+                        </button>
                     </div>
+                </div>
                 )
+                : (<div className="loading">Loading</div>)
+                return (
+                    <div className="carviewContainer">
+                      <div className="homeContainer">
+                        <Logo className="logoo" />
+                        <NavBar className="mynav" />
+                        <Footer className="footerr" />
+                      </div>
+                      {display}
+                      <div />
+                    </div>
+                );
             }}
         </ReactReduxContext.Consumer>
-    )
-}
+    );
+};
 
-export default CarComponent;
+CarComponent.propTypes = {
+    match: PropTypes.objectOf(PropTypes.any),
+    params: PropTypes.string,
+    model_id: PropTypes.string,
+    history: PropTypes.objectOf(PropTypes.any).isRequired,
+  };
+  
+  CarComponent.defaultProps = {
+    match: {},
+    params: '',
+    model_id: '1',
+  };
+  
+  const mapStateToProps = state => ({ items: state.items });
+export default connect(mapStateToProps, {getItems})(CarComponent);
