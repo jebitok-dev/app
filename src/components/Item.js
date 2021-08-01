@@ -30,14 +30,14 @@ class Items extends React.Component {
         threeIndex.push(last);
         let fill = [];
         response.forEach((value, index) => {
-            threeIndex.forEach(val) => {
+            threeIndex.forEach(val => {
                 if(index + 1 === val) {
                     fill.push(value);
                     this.setState({
                         workingData: fill,
                     });
                 }
-            };
+            });
         });
         this.setState({
             data: response,
@@ -47,7 +47,7 @@ class Items extends React.Component {
     handleChangeLeft() {
         const {newData, threeIndex} = this.state;
         let threeData = newData;
-        let (threeData.length === 3) {
+        if (threeData.length === 3) {
             threeData = [];
         }
         if(threeIndex[0] >= 2) {
@@ -69,5 +69,80 @@ class Items extends React.Component {
             threeIndex,
         });
     }
-    
-}
+
+    handleChangeRight(){
+        const {threeIndex, data, workingData} = this.state;
+        const myLength = data.length;
+        const limit = myLength;
+        if(threeIndex[0] <= limit - 3) {
+            threeIndex[0] -= 1;
+            threeIndex[1] -= 1;
+            threeIndex[2] -= 1;
+        }
+        data.forEach((value, index) => {
+            threeIndex.forEach((val, ind) => {
+                if(index + 1 === val) {
+                    workingData[ind] = value;
+                }
+                return workingData;
+            });
+        });
+        this.setState({
+            threeIndex,
+        });
+    }
+
+    backColor(index) {
+        const {colorArray} = this.state;
+        return colorArray[index - 1];
+    }
+
+    render() {
+        const {workingData, threeIndex} = this.state;
+        const myItems = Object.keys(workingData);
+        const display = workingData.length !== 0
+        ? (myItems.map((post, i) => {
+            (myitems.map((post, i) => (
+                <div key={uuidv4()} className="utopian-items">
+                  <div className="itemContainer">
+                    <div className="backgroundc" style={{ backgroundColor: `${this.backColor(threeIndex[0] + i)}` }} />
+                    <Link to={`/model/${workingdata[i].id}`}>
+                      <img alt="img" className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
+                    </Link>
+                  </div>
+                  <p className="teslanames">
+                    {workingData[i].name}
+                  </p>
+                  <div className="dots">............</div>
+                  <p className="itemdescrption">{workingdata[i].description}</p>
+                  <div className="footer">
+                    <FaTwitter className="icons" />
+                    <FaFacebookF className="icons" />
+                    <FaPinterestP className="icons" />
+                  </div>
+                </div>
+              ))) : (<div>Loading</div>);
+        
+            return (
+              <div className="itemsContainer">
+                <button
+                  type="button"
+                  className="leftbutton"
+                  onClick={this.handleChangeLeft}
+                >
+                  <FaAngleLeft />
+                </button>
+                {display}
+                <button
+                  type="button"
+                  className="rightbutton"
+                  onClick={this.handleChangeRight}
+                >
+                  <FaAngleRight />
+                </button>
+              </div>
+            );
+          }
+        }
+        
+        export default Items;

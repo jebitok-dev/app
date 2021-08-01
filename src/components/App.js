@@ -4,7 +4,7 @@ import CarComponent from './CarComponent';
 function App() {
   return (
     <div className="App">
-       <CarComponent />
+      <CarComponent />
     </div>
   );
 }
