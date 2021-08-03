@@ -58,8 +58,8 @@ const BookAppointment = ({
   });
 
   const handleLocationChange = (e) => {
-    const mylocation = e.target.value;
-    setLocation(mylocation);
+    const myLocation = e.target.value;
+    setLocation(myLocation);
   };
 
   const handleChange = (date) => {
