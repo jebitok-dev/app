@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import '../styles/home.css';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
-import Item from '../components/Item';
+import Items from '../components/Item';
 import Logout from '../components/auth/Logout';
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
 
   const itemContainer = (currentCars) === undefined
     ? (<div>Loading ...</div>) : (
-      <Item response={currentCars.items} />
+      <Items response={currentCars.items} />
     );
 
   return (
