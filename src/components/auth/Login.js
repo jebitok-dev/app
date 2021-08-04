@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import './registration.css';
+import '../../styles/registration.css';
 
 class Login extends React.Component {
   constructor(props) {

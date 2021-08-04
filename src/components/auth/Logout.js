@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/registration.css';
 
 const Logout = () => {
   const handleLogout = () => {
