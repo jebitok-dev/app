@@ -34,7 +34,7 @@ const Shop = () => {
           className="itemsImg"
           id="itemsimage"
           alt="none"
-          src=""
+          src="https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${index + 1}.webp"
         />
         <p className="shopmodel">{value.model}</p>
         <p className="shopreview">{value.review}</p>
