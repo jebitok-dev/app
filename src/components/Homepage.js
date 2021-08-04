@@ -1,16 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import '../styles/configure.css';
-import { FaRegSun, FaAngleRight } from 'react-icons/fa';
-import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import '../styles/homepage..css';
 import Welcome1 from '../images/Welcome1.jpg';
 import Welcome2 from '../images/Welcome2.jpg';
 import Welcome3 from '../images/Welcome3.jpg';
 import Welcome4 from '../images/Welcome4.jpg';
 import Welcome5 from '../images/Welcome5.jpg';
-import Search from '../images/search.png';
 
 const slideImages = [
   Welcome1,
@@ -20,7 +18,7 @@ const slideImages = [
   Welcome5,
 ];
 
-class Configure extends React.Component {
+class Homepage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -82,20 +80,10 @@ class Configure extends React.Component {
     );
 
     return (
-      <div className="wholec">
-        <button type="button" className="hello">
-          <div className="first" />
-          <div className="second" />
-        </button>
+      <div>
         <div className="loginRegister">
-          <button type="button" className="configure">
-            <FaRegSun className="regsum" />
-            <div className="config">Configure</div>
-            <FaAngleRight className="rightfa" />
-          </button>
-        </div>
-        <div className="search">
-          <img src={Search} alt="" className="simage" />
+          <button type="button" onClick={this.handleLogin} className="login">LOGIN</button>
+          <button type="button" onClick={this.handleRegistration} className="register">SIGN UP</button>
         </div>
         <div className="circlebody">
           {circle}
@@ -134,12 +122,8 @@ class Configure extends React.Component {
   }
 }
 
-Configure.propTypes = {
-  history: PropTypes.string,
+Homepage.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-Configure.defaultProps = {
-  history: '',
-};
-
-export default Configure;
+export default Homepage;
