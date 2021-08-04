@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+/* eslint-disable*/ 
 const config = {
   headers: {
     Authorization: `Bearer ${localStorage.token}`,
@@ -18,7 +18,7 @@ export const getAppointments = () => async (dispatch) => {
   }
 };
 
-export const giveCars = () => async (dispatch) => {
+export const getCars = () => async (dispatch) => {
   try {
     const res = await axios.get('https://thawing-beach-22464.herokuapp.com/cars');
     dispatch({

@@ -5,34 +5,34 @@ import Appointment from '../components/Appointment';
 import Footer from '../components/Footer';
 
 class Book extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {},
-            user_id: undefined,
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+      userId: undefined,
+    };
+  }
 
-    componentDidMount() {
-        this.setState({
-            user: localStorage.username,
-            user_id: localStorage.id,
-        });
-    }
+  componentDidMount() {
+    this.setState({
+      user: localStorage.username,
+      userId: localStorage.id,
+    });
+  }
 
-    render() {
-        const {user, user_id} = this.state;
-        return (
-            <div className="home">
-                <div className="homeContainer">
-                    <Logo />
-                    <Navbar />
-                    <Footer />
-                </div>
-                <Appointment user={user} userId={user_id} />
-            </div>
-        );
-    }
+  render() {
+    const { user, userId } = this.state;
+    return (
+      <div className="home">
+        <div className="homeContainer">
+          <Logo />
+          <Navbar />
+          <Footer />
+        </div>
+        <Appointment user={user} userId={userId} />
+      </div>
+    );
+  }
 }
 
 export default Book;
