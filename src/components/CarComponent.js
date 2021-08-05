@@ -23,7 +23,7 @@ const CarComponent = (props) => {
     const { history } = props;
     history.push('/configure');
   };
-
+/* eslint-disable*/ 
   const { getCars } = props;
   getCars();
   return (

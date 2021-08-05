@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/models.css';
 import golfWhite from '../images/itemsImages/golf.webp';
-import golfmk from '../images/itemImages/golfmk.webp';
+import golfmk from '../images/itemsImages/golfmk.webp';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import Navbar from '../components/Navbar';

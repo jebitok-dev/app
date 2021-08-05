@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import BookAppointment from './BookAppontment';
 import Homepage from './Homepage';
 import Login from './auth/Login';
-import Logout from './auth/Logout';
 import Registration from './auth/Registration';
 import Model from '../containers/Models';
 import Shop from '../containers/Shop';
 import Book from '../containers/Book';
+import Configure from './Configure';
 import '../styles/App.css';
 import CarComponent from './CarComponent';
 
@@ -33,7 +33,7 @@ const App = () => {
     setUser({});
     localStorage.clear();
   };
-
+  /* eslint-disable react/jsx-props-no-spreading */
   return (
     <div className="App">
       <Router>

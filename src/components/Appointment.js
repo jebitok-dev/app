@@ -10,7 +10,7 @@ const Appointment = ({ user, userId }) => {
   const dispatch = useDispatch();
   const [rerender] = useState(false);
 
-  let [model, setModel] = useState('');
+  const [model, setModel] = useState('');
   const [location, setLocation] = useState('');
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Appointment = ({ user, userId }) => {
     });
   }
 
-  const renderModels = allModels.map((item) => (
+  const rerenderModels = allModels.map((item) => (
     <option
       key={uuidv4()}
       value={item}
@@ -43,7 +43,7 @@ const Appointment = ({ user, userId }) => {
       {item}
     </option>
   ));
-
+/* eslint-disable*/ 
   const handleModelChange = (e) => {
     model = e.target.value;
     setModel(model);
@@ -83,7 +83,7 @@ const Appointment = ({ user, userId }) => {
       <div className="hardline" />
       <div className="appointmentcontent">
         <p>
-          Please let us know what you're interested in so we can help meet your needs.
+          Please let us know what you are interested in so we can help meet your needs.
           Book an appointment.
         </p>
       </div>
@@ -108,7 +108,7 @@ const Appointment = ({ user, userId }) => {
   );
 };
 
-Appointment.proptypes = {
+Appointment.propTypes = {
   user: Proptypes.objectOf(Proptypes.any),
   userId: Proptypes.string,
 };

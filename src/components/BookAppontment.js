@@ -7,15 +7,16 @@ import DatePicker from 'react-datepicker';
 import { getAppointments } from '../actions/index';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import '../styles/appoointment.css';
+import '../styles/appointment.css';
 
+/* eslint-disable react/prop-types */
 const BookAppointment = ({
   user, userId, history, getAppointments,
 }) => {
   const [models, setModels] = useState([]);
-  const [model, setModel] = useState('');
+  const [model] = useState('');
   const [location, setLocation] = useState('');
-  const [myId, setMyId] = useState('');
+  const [myId] = useState('');
   const [startDate, setDate] = useState(new Date());
   const [success, setSuccess] = useState('Feel free to book an appointment with us!');
   const [myAppointments, setAppointments] = useState([]);
@@ -26,7 +27,7 @@ const BookAppointment = ({
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
-
+/* eslint-disable*/ 
     const fetchData = async () => {
       const result = await axios(
         'https://thawing-beach-22464.herokuapp.com/appointments', config, { withCredentials: true },

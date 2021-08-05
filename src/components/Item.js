@@ -21,31 +21,31 @@ class Items extends React.Component {
   }
 
   /* eslint-disable react/prop-types */
-  componentDidMount() {
-    const { response } = this.props;
-    const { threeIndex } = this.state;
-    let middle = Math.floor(response.length / 2);
-    const first = middle;
-    middle += 1;
-    const last = middle + 1;
-    threeIndex.push(first);
-    threeIndex.push(middle);
-    threeIndex.push(last);
-    const fill = [];
-    response.forEach((value, index) => {
-      threeIndex.forEach((val) => {
-        if (index + 1 === val) {
-          fill.push(value);
-          this.setState({
-            workingData: fill,
-          });
-        }
-      });
-    });
-    this.setState({
-      data: response,
-    });
-  }
+  // componentDidMount() {
+  //   const { response } = this.props;
+  //   const { threeIndex } = this.state;
+  //   let middle = Math.floor(Math.random() * response.length);
+  //   const first = middle;
+  //   middle += 1;
+  //   const last = middle + 1;
+  //   threeIndex.push(first);
+  //   threeIndex.push(middle);
+  //   threeIndex.push(last);
+  //   const fill = [];
+  //   response.forEach((value, index) => {
+  //     threeIndex.forEach((val) => {
+  //       if (index + 1 === val) {
+  //         fill.push(value);
+  //         this.setState({
+  //           workingData: fill,
+  //         });
+  //       }
+  //     });
+  //   });
+  //   this.setState({
+  //     data: response,
+  //   });
+  // }
 
   handleChangeLeft() {
     const { newData, threeIndex } = this.state;

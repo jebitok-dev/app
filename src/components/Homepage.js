@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { v4 as uuidv4 } from 'uuid';
-import '../styles/homepage..css';
+import '../styles/homepage.css';
 import Welcome1 from '../images/Welcome1.jpg';
 import Welcome2 from '../images/Welcome2.jpg';
 import Welcome3 from '../images/Welcome3.jpg';
