@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Proptypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import { getItems, postAppointments } from '../actions/index';
-import '../styles';
+import { getCars, postAppointments } from '../actions/index';
+import '../styles/appointment.css';
 
 const Appointment = ({ user, userId }) => {
   const currentItems = useSelector((state) => state.getAppointments);
@@ -14,7 +14,7 @@ const Appointment = ({ user, userId }) => {
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-    dispatch(getItems());
+    dispatch(getCars());
 
     const timer1 = setTimeout(() => rerender(null), 2000);
     return () => {
