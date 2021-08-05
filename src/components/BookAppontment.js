@@ -12,13 +12,13 @@ import '../styles/appoointment.css';
 const BookAppointment = ({
   user, userId, history, getAppointments,
 }) => {
-  let [models, setModels] = useState([]);
-  let [model, setModel] = useState('');
+  const [models, setModels] = useState([]);
+  const [model, setModel] = useState('');
   const [location, setLocation] = useState('');
-  let [myId, setMyId] = useState('');
+  const [myId, setMyId] = useState('');
   const [startDate, setDate] = useState(new Date());
   const [success, setSuccess] = useState('Feel free to book an appointment with us!');
-  let [myAppointments, setAppointments] = useState([]);
+  const [myAppointments, setAppointments] = useState([]);
 
   useEffect(() => {
     const config = {
@@ -52,7 +52,7 @@ const BookAppointment = ({
   }
 
   models.forEach((value) => {
-    if (value.id === myid) {
+    if (value.id === myId) {
       model = value.model;
     }
   });
@@ -116,7 +116,7 @@ const BookAppointment = ({
             <div className="appointmentcontent">
               <p>{mySuccess}</p>
               <p>
-                Please let us know what you're interested in so we can help meet your needs.
+                Please let us know what you are interested in so we can help meet your needs.
                 Book an appointment.
               </p>
             </div>
