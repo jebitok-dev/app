@@ -11,8 +11,14 @@
     "react": "^17.0.2",
     "axios": "^0.21.0",
     "colorthief": "^2.3.2",
+    "@craco/craco": "^6.1.2",
+    "@tailwindcss/forms": "^0.3.2",
+    "autoprefixer": "^9.8.6",
+    "history": "^4.10.1",
+    "moxios": "^0.4.0",
     "http-proxy-middleware": "^1.0.6",
     "json-query": "^2.2.2",
+    "redux-mock-store": "^1.5.4",
     "react-datepicker": "^3.3.0",
     "react-icons": "^3.11.0",
     "react-localize-redux": "^3.5.3",
@@ -76,6 +82,9 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
-    "redux-mock-store": "^1.5.4"
+    "redux-mock-store": "^1.5.4",
+    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   }
 }
