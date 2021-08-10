@@ -29,7 +29,8 @@ const Home = ({ user }) => {
         <div className="pt-10 mt-10 w-4/4 sm:w-3/4 md:w-2/4 xl:w-2/4">
           <h2 className="intro-x font-bold text-white text-3xl xl:text-5xl text-left pb-2">Find your car!</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, porro optio odio obcaecati corrupti ullam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium,
+            porro optio odio obcaecati corrupti ullam!
           </p>
           <div className="flex gap-4 my-4">
             <button type="button" className="bg-primary py-3 mt-3 px-6 text-white block font-semibold rounded-full shadow-2xl focus:outline-none">
