@@ -3,13 +3,15 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FaUserNinja, FaPlayCircle } from 'react-icons';
+import history from '../containers/History';
+import Actions from '../actions/index';
 
 const Home = ({ user }) => {
   const dispatch = useDispatch();
 
   const logout = () => {
     history.pushState('/login');
-    dispatch(userActions.logout());
+    dispatch(Actions.logout());
   };
 
   return (
