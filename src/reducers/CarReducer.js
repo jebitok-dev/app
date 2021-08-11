@@ -1,18 +1,20 @@
-const getAppointments = (state = {}, action) => {
+const Car = (state = {}, action) => {
   switch (action.type) {
-    case 'GET_APPOINTMENTS':
+    case 'GET_ALL_CARS_REQUEST':
       return {
-        ...state,
-        appointments: action.payload,
+        lodaing: true,
       };
-    case 'GET_CARS':
+    case 'GET_ALL_CARS_SUCCESS':
       return {
-        ...state,
-        appointments: action.payload,
+        cars: action.cars,
+      };
+    case 'GET_ALL_CARS_FAILURE':
+      return {
+        error: action.error,
       };
     default:
       return state;
   }
 };
 
-export default getAppointments;
+export default Car;
