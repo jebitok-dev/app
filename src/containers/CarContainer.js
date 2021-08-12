@@ -28,7 +28,7 @@ const login = async (name, password) => {
 
 const logout = async () => {
   const options = {
-    method: '',
+    method: 'DELETE',
     url: 'https://young-falls-88019.herokuapp.com/users/sign_out',
     headers: auth(),
   };
@@ -59,11 +59,11 @@ const register = async (user) => {
 
   return axios.request(options)
     .then((response) => {
-      const loggedInUser = response.data;
-      loggedInUser.name = user.name;
+      const loggedUser = response.data;
+      loggedUser.name = user.name;
 
-      localStorage.setItem('user', JSON.stringify(loggedInUser));
-      return loggedInUser;
+      localStorage.setItem('user', JSON.stringify(loggedUser));
+      return loggedUser;
     })
     .catch((error) => error.response);
 };

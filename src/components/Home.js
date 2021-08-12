@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { FaUserNinja, FaPlayCircle } from 'react-icons';
+import { FaUserNinja, FaPlayCircle } from 'react-icons/fa';
 import history from '../containers/History';
 import Actions from '../actions/index';
 
