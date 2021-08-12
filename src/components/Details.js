@@ -12,12 +12,12 @@ const Details = () => {
 
   const addToFavorites = (carId, e) => {
     e.preventDefault();
-    dispatch(Car.addToFavorites(userLogged.dispatch, carId));
+    dispatch(Car.addToFavorites(userLogged.id, carId));
   };
 
   const removeFromFavorites = (favoriteId, e) => {
     e.preventDefault();
-    dispatch(Car.removeFromFavorites(userLogged.dispatch, favoriteId));
+    dispatch(Car.removeFromFavorites(userLogged.id, favoriteId));
   };
 
   const cars = useSelector((state) => state.Car);
