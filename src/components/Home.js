@@ -19,7 +19,7 @@ const Home = ({ user }) => {
       <div className="bg-black bg-opacity-50 h-auto p-5 text-white">
         <header className="flex mb-10 justify-between">
           <Link to="/">
-            <img src="" alt="" />
+            <img src="./assets/golf.webp" alt="" />
           </Link>
           <div className="mt-5 flex gap-4 md:mx-10 items-center">
             <FaUserNinja />
