@@ -6,7 +6,7 @@ import Registration from '../reducers/Registration';
 describe('AuthenticationReducer', () => {
   describe('Sign Up Reducer', () => {
     it('should return an empty object when nothing is passed to it', () => {
-      expect(Registration(undefined, {})).toEqual({});
+      expect(Registration({}, {})).toEqual({});
     });
 
     it('should return an object when request action is passed to it', () => {
@@ -24,7 +24,7 @@ describe('AuthenticationReducer', () => {
 
   describe('Login Reducer', () => {
     it('should return an empty object when nothing is passed to it', () => {
-      expect(Authentication(undefined, {})).toEqual({});
+      expect(Authentication({}, {})).toEqual({});
     });
 
     it('should return an object when request action is passed to it', () => {
@@ -48,15 +48,15 @@ describe('Car Reducer', () => {
     });
 
     it('should return an object (loading) when request action is passed to it', () => {
-      expect(Car([], { type: 'GET_ALL_CARS_REQUEST', house: { } })).toEqual({ loading: true });
+      expect(Car([], { type: 'GET_ALL_CARS_REQUEST', car: { } })).toEqual({ loading: true });
     });
 
     it('should return an object when success action is passed to it', () => {
-      expect(Car([], { type: 'GET_ALL_CARS_SUCCESS', house: { } })).toEqual({ cars: { } });
+      expect(Car([], { type: 'GET_ALL_CARS_SUCCESS', car: { } })).toEqual({ cars: { } });
     });
 
     it('should return an empty object when failure action is passed to it', () => {
-      expect(Car([], { type: 'GET_ALL_CARS_FAILURE', house: { } })).toEqual({});
+      expect(Car([], { type: 'GET_ALL_CARS_FAILURE', car: { } })).toEqual({});
     });
   });
 
