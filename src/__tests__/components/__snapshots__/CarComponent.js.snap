@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarComponent should match snapshot 1`] = `
+<div>
+  <div
+    className="col-lg-8 offset-lg-2"
+  >
+    <p />
+  </div>
+</div>
+`;

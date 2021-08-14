@@ -2,7 +2,7 @@ const Car = (state = {}, action) => {
   switch (action.type) {
     case 'GET_ALL_CARS_REQUEST':
       return {
-        lodaing: true,
+        loading: true,
       };
     case 'GET_ALL_CARS_SUCCESS':
       return {

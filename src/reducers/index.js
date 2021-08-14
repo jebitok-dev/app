@@ -1,4 +1,5 @@
-import { combineReducers } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import Car from './CarReducer';
 import Authentication from './AuthReducer';
 import Registration from './Registration';
@@ -13,4 +14,6 @@ const combinedReducers = combineReducers({
   Notification,
 });
 
-export default combinedReducers;
+const store = createStore(combinedReducers, applyMiddleware(thunk));
+
+export default store;

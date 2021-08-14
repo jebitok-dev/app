@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import CarComponent from '../../components/CarComponent';
-import store from '../../index';
+import store from '../../reducers/index';
 
 describe('CarComponent', () => {
   it('should match snapshot', () => {
